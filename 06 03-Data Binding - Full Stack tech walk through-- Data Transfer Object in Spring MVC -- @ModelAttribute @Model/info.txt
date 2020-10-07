@@ -1,0 +1,21 @@
+@RequestMapping("/process-homepage")
+	public String showResultPage(@RequestParam("userName") String userName1, 
+			@RequestParam("crushName") String crushName1,
+			Model model
+			)
+	{
+		System.out.println("user name is: "+ userName1);
+		System.out.println("crush name is: "+ crushName1);
+		
+		model.addAttribute("userName", userName1);
+		model.addAttribute("crushName", crushName1);
+		return "result-page";
+	}
+  
+  <body>
+	<h1 align="center">Love calculator</h1>
+	
+	<p>User Name is: ${userName}</p>
+	<p>Crush Name is: ${crushName}</p>
+</body>
+</html>
